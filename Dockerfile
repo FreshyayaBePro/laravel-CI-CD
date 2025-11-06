@@ -41,6 +41,6 @@ USER www
 
 # Start main process
 #ENTRYPOINT ["/bin/bash"]
-ENTRYPOINT ["sleep", "100000000000000000000000000000000000000000000"]
+# ENTRYPOINT ["sleep", "100000000000000000000000000000000000000000000"]
 
-#ENTRYPOINT ["php","artisan","serve","--host","0.0.0.0"]
+ENTRYPOINT ["php","artisan","serve","--host","0.0.0.0"]
