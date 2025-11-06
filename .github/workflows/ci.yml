@@ -14,7 +14,7 @@ jobs :
 
           #2 - exécuter les tests 
         - name : Run test
-          run : cd app_laravel && composer install  && php artisan key:gen && php artisan test 
+          run : cd app_laravel   && php artisan key:gen && composer install && php artisan test 
 
           #3 Construre l'image
         - name : Build app image
