@@ -27,9 +27,10 @@ EXPOSE 8000
 RUN adduser www \
    && usermod -aG www www
 
-RUN chmod u+x /projet/entrypoint.sh 
-
-#&& composer install && php artisan key:generate
+RUN chmod u+x /projet/entrypoint.sh \
+    && cp .env.example .env \
+    && composer install \
+    && php artisan key:generate
 
 # RUN composer i && php artisan key:generate
 
