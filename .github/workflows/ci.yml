@@ -11,5 +11,8 @@ jobs :
         - name : récupérer le code source
           uses : actions/checkout@v5
 
+          #2 - exécuter les tests 
+        - name : Run test
+          run : cd app_laravel && php artisan test 
 
-          
+
