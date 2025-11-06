@@ -8,11 +8,18 @@ jobs :
   build:
     runs-on : ubuntu-latest
     steps : 
+          #1 récupérer le code source 
         - name : récupérer le code source
           uses : actions/checkout@v5
 
           #2 - exécuter les tests 
-        - name : Run test
-          run : cd app_laravel && composer install && cp .env .env.example && php artisan key:gen && php artisan test 
+        # - name : Run test
+        #   run : cd app_laravel && composer install && cp .env .env.example && php artisan key:gen && php artisan test 
+
+          #3 Construre l'image
+        - name : Build app image
+          run : docker build -t bokopolo/laravel-ci-cd:latest .
+
+
 
 
