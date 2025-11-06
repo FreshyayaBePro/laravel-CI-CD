@@ -27,7 +27,8 @@ jobs :
             password : ${{ secrets.DOCKER_TOKEN }}
 
           # 5- Pousser l'image sur la registry
-        - name : Push image with new tag
-          run : docker push bokopolo/laravel-ci-cd:latest
+        - name: Push image with new tag
+
+          run: docker push bokopolo/laravel-ci-cd:latest
 
 
