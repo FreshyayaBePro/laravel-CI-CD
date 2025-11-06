@@ -13,8 +13,8 @@ jobs :
           uses : actions/checkout@v5
 
           #2 - exécuter les tests 
-        # - name : Run test
-        #   run : cd app_laravel && composer install && cp .env .env.example && php artisan key:gen && php artisan test 
+        - name : Run test
+          run : cd app_laravel && composer install && cp .env .env.example && php artisan key:gen && php artisan test 
 
           #3 Construre l'image
         - name : Build app image
