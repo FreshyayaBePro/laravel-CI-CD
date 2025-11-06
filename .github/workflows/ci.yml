@@ -1,6 +1,15 @@
+#Définir un nom
 name : Laravel CI
+#Définir les triggers
 on : 
   push :
     branches : [main]
-  pull_request :
 jobs :
+  build:
+    runs-on : ubuntu-latest
+    steps : 
+        - name : récupérer le code source
+          uses : actions/checkout@v5
+
+
+          
