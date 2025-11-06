@@ -13,6 +13,6 @@ jobs :
 
           #2 - exécuter les tests 
         - name : Run test
-          run : cd app_laravel && php artisan test 
+          run : cd app_laravel && composer install && cp .env .en.example && php artsan key:gen && php artisan test 
 
 
