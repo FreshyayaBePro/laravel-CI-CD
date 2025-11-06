@@ -1,0 +1,31 @@
+# Définir les services app et db 
+services :
+  app :
+    build : . # Créer une image à partir du Dockerfile courant
+    image : larav:v0
+    #entrypoint : /bin/bash -c 'php artisan migrate && php artisan serve --host 0.0.0.0'
+    entrypoint : ["/bin/bash","entrypoint.sh"]
+    restart : unless-stopped
+    ports : 
+      - "7000:8000"
+    volumes :
+      - ./app_laravel:/projet
+    depends_on:
+      - db
+
+  db :
+     volumes : 
+       - dbdata:/var/lib/postgresql/data
+     image : postgres:15
+     env_file :
+       -  .db.env
+       #- ./app/.env
+
+         # environment :
+         # - POSTGRES_DB=${DB_DATABASE}
+         # - POSTGRES_USER=${DB_USERNAME}
+         # - POSTGRES_PASSWORD=${DB_PASSWORD}
+
+    
+volumes :
+  dbdata :
